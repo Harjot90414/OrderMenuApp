@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">OrderMenuApp</string>
+    <string name="order">Order</string>
+    <string name="menu">Menu</string>
+    <string name="add">ADD</string>
+    <string name="show_add_item">Show add item</string>
+    <string name="item_name">Item Name</string>
+    <string name="item_price">Item Price</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="order_menu">Order Menu</string>
+    <string name="item_added">Item Added</string>
+</resources>

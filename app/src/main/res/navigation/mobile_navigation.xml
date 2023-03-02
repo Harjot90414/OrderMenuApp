@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/order">
+    <fragment
+        android:id="@+id/order"
+        android:name="com.harjot.ordermenuapp.OrderFragment"
+        android:label="Order"
+        tools:layout="@layout/layout_order"
+        />
+    <fragment
+        android:id="@+id/menu"
+        android:name="com.harjot.ordermenuapp.MenuFragment"
+        android:label="Menu"
+        tools:layout="@layout/fragment_menu"/>
+
+
+
+
+</navigation>
