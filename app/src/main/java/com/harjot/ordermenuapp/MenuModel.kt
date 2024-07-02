@@ -7,9 +7,9 @@ data class MenuModel(
     var counter:Int=1
 )
 {
-//    override fun toString(): String {
-//        return "$name"
-//    }
+    override fun toString(): String {
+        return "$name"
+    }
 //    var totalPrice = 0
 //    get() {
 //        return (price?:0).times(quantity)
