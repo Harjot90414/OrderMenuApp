@@ -23,17 +23,17 @@
             />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilUpdateItemPrice"
+        android:id="@+id/tilUpdateItemQuantity"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_10dp"
         android:layout_marginRight="@dimen/margin_10dp"
         android:layout_marginTop="@dimen/margin_10dp"
-        android:hint="@string/item_price">
+        android:hint="Item Quantity">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etUpdateItemPrice"
+            android:id="@+id/etUpdateItemQuantity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"

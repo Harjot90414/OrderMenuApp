@@ -9,15 +9,15 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import java.util.ArrayList
 
-class OrderAdpater(var array: ArrayList<MenuModel>, var orderClickInterface: OrderClickInterface) : RecyclerView.Adapter<OrderAdpater.ViewHolder> () {
+class OrderAdpater(var array: ArrayList<MenuModel>, var orderClickInterface: OrderClickInterface) :
+    RecyclerView.Adapter<OrderAdpater.ViewHolder> () {
 
     class ViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
         var etItemName: TextView = view.findViewById(R.id.tvOrderName)
-        var etItemPrice: TextView = view.findViewById(R.id.tvOrderprice)
+//        var etItemPrice: TextView = view.findViewById(R.id.tvOrderprice)
         var ibtnOrderAdd: ImageButton = view.findViewById(R.id.ibtnOrderAdd)
         var ibtnOrderSub: ImageButton = view.findViewById(R.id.ibtnOrderSub)
         var tvOrderCount:TextView = view.findViewById(R.id.tvOrderCount)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -27,8 +27,8 @@ class OrderAdpater(var array: ArrayList<MenuModel>, var orderClickInterface: Ord
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.etItemName.setText(array[position].name.toString())
-        holder.etItemPrice.setText(array[position].totalPrice.toString())
-        holder.tvOrderCount.setText(array[position].quantity.toString())
+//        holder.etItemPrice.setText(array[position].totalPrice.toString())
+        holder.tvOrderCount.setText(array[position].counter.toString())
         holder.ibtnOrderAdd.setOnClickListener{
             orderClickInterface.addCounter(position)
         }

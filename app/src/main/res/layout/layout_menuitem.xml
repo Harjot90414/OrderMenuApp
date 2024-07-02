@@ -20,7 +20,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="@dimen/margin_40dp"
-        android:id="@+id/tvmenuprice"
+        android:id="@+id/tvMenuQuantity"
         android:layout_weight="1.7"
         android:textAlignment="center"
         />

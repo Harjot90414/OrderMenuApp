@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.harjot.ordermenuapp.databinding.LayoutOrderBinding
@@ -50,24 +51,24 @@ class OrderFragment : Fragment() {
         binding.listOrderitem.layoutManager = LinearLayoutManager(bottomNav)
         adapter = OrderAdpater(orderList, object : OrderClickInterface {
             override fun addCounter(position: Int) {
-                var price= bottomNav.arraylist[position].price
-                orderList[position].quantity = orderList[position].quantity+1
-
-                adapter.notifyDataSetChanged()
+//                var price= bottomNav.arraylist[position].price
+                if (orderList[position].counter < orderList[position].quantity) {
+                    orderList[position].counter = orderList[position].counter + 1
+                    adapter.notifyDataSetChanged()
+                }else{
+                    Toast.makeText(bottomNav, "Maximum Quantity Reached", Toast.LENGTH_SHORT).show()
+                }
             }
 
             override fun removeCounter(position: Int) {
-                if(orderList[position].quantity <= 1){
+                if(orderList[position].counter <= 1){
                     orderList.removeAt(position)
                 }
                 else{
-                    orderList[position].quantity = orderList[position].quantity-1
+                    orderList[position].counter = orderList[position].counter-1
                 }
                 adapter.notifyDataSetChanged()
             }
-
-
-
         })
 
         binding.listOrderitem.adapter = adapter

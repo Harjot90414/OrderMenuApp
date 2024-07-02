@@ -9,10 +9,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import java.util.ArrayList
 
-class MenuAdapter(var menulist: ArrayList<MenuModel>, var menuClickInterface: MenuClickInterface) : RecyclerView.Adapter<MenuAdapter.ViewHolder> () {
+class MenuAdapter(var menulist: ArrayList<MenuModel>, var menuClickInterface: MenuClickInterface) :
+    RecyclerView.Adapter<MenuAdapter.ViewHolder> () {
     class ViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
         var etItemName: TextView = view.findViewById(R.id.tvmenuitem)
-        var etItemPrice: TextView = view.findViewById(R.id.tvmenuprice)
+        var etItemQuantity: TextView = view.findViewById(R.id.tvMenuQuantity)
     }
 
 
@@ -26,8 +27,10 @@ class MenuAdapter(var menulist: ArrayList<MenuModel>, var menuClickInterface: Me
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             holder.etItemName.setText(menulist[position].name.toString())
-            holder.etItemPrice.setText(menulist[position].price.toString())
-            holder.view.setOnClickListener { menuClickInterface.removeCliCK(menulist[position], position) }
+            holder.etItemQuantity.setText(menulist[position].quantity.toString())
+            holder.view.setOnClickListener {
+                menuClickInterface.removeCliCK(menulist[position], position)
+            }
         }
         override fun getItemCount(): Int {
             return menulist.size

@@ -62,12 +62,14 @@ class MenuFragment : Fragment(), MenuClickInterface {
             dialogBinding.btnItemAdd.setOnClickListener {
                 if (dialogBinding.etItemName.text.toString().isNullOrEmpty()) {
                     dialogBinding.etItemName.setError("Enter Item Name")
-                } else if (dialogBinding.etItemPrice.text.toString().isNullOrEmpty()) {
-                    dialogBinding.etItemPrice.setError("Enter Item Price")
+                } else if (dialogBinding.etItemQty.text.toString().isNullOrEmpty()) {
+                    dialogBinding.etItemQty.setError("Enter Item Price")
                 } else {
                     Toast.makeText(bottomNav, resources.getString(R.string.item_added), Toast.LENGTH_LONG).show()
-                    bottomNav.arraylist.add(MenuModel(dialogBinding.etItemName.text.toString(), dialogBinding.etItemPrice.text.toString().toDouble()))
-
+                    bottomNav.arraylist.add(MenuModel(
+                        dialogBinding.etItemName.text.toString(),
+                        dialogBinding.etItemQty.text.toString().toInt())
+                    )
                     adapter.notifyDataSetChanged()
                     dialog.dismiss()
 
@@ -75,6 +77,7 @@ class MenuFragment : Fragment(), MenuClickInterface {
             }
             dialog.show()
         }
+
         return binding.root
     }
 
@@ -107,15 +110,15 @@ class MenuFragment : Fragment(), MenuClickInterface {
             WindowManager.LayoutParams.WRAP_CONTENT
         )
         dbinding.etUpdateItemName.setText(menuModel.name)
-        dbinding.etUpdateItemPrice.setText(menuModel.price.toString())
+        dbinding.etUpdateItemQuantity.setText(menuModel.quantity.toString())
         dbinding.btnUpdate.setOnClickListener{
             if(dbinding.etUpdateItemName.text.toString().isNullOrEmpty()){
                 dbinding.etUpdateItemName.setError("Enter Update Item Name")
-            }else if(dbinding.etUpdateItemPrice.text.toString().isNullOrEmpty()){
-                dbinding.etUpdateItemPrice.setError("Enter Update  Item Price")
+            }else if(dbinding.etUpdateItemQuantity.text.toString().isNullOrEmpty()){
+                dbinding.etUpdateItemQuantity.setError("Enter Update  Item Price")
             }else{
                 Toast.makeText(bottomNav, resources.getString(R.string.item_added), Toast.LENGTH_LONG).show()
-                bottomNav.arraylist[position] = MenuModel(dbinding.etUpdateItemName.text.toString(),dbinding.etUpdateItemPrice.text.toString().toDouble())
+                bottomNav.arraylist[position] = MenuModel(dbinding.etUpdateItemName.text.toString(),dbinding.etUpdateItemQuantity.text.toString().toInt())
                 adapter.notifyDataSetChanged()
                 dialog.dismiss()
             }
@@ -123,11 +126,8 @@ class MenuFragment : Fragment(), MenuClickInterface {
         dbinding.btnDelete.setOnClickListener{
             bottomNav.arraylist.removeAt(position)
             adapter.notifyDataSetChanged()
-
-
             dialog.dismiss()
         }
-
         dialog.show()
     }
 }

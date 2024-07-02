@@ -32,13 +32,13 @@
         android:layout_marginLeft="@dimen/margin_10dp"
         android:layout_marginRight="@dimen/margin_10dp"
         android:layout_marginTop="@dimen/margin_10dp"
-        android:hint="@string/item_price">
+        android:hint="@string/item_qty">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etItemPrice"
+            android:id="@+id/etItemQty"
             android:layout_width="match_parent"
-            android:inputType="numberDecimal"
-            android:digits="0123456789."
+            android:inputType="number"
+            android:digits="0123456789"
             android:layout_height="wrap_content"
             />
     </com.google.android.material.textfield.TextInputLayout>
