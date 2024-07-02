@@ -32,8 +32,7 @@ class OrderFragment : Fragment() {
     lateinit var menuAdapter: ArrayAdapter<MenuModel>
     lateinit var binding: LayoutOrderBinding
     var position = -1
-
-
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bottomNav= activity as BottomNav
@@ -101,12 +100,7 @@ class OrderFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Binding = LayoutShowAddItemsBinding.inflate(layoutInflater)
-
     }
-
-
-
-
     companion object {
         /**
          * Use this factory method to create a new instance of
@@ -126,5 +120,4 @@ class OrderFragment : Fragment() {
                 }
             }
     }
-
 }

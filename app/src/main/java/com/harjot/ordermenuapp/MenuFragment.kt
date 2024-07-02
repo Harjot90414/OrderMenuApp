@@ -22,7 +22,6 @@ import com.harjot.ordermenuapp.databinding.LayoutMenuitemBinding
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 class MenuFragment : Fragment(), MenuClickInterface {
-
     private var param1: String? = null
     private var param2: String? = null
     lateinit var binding: FragmentMenuBinding
@@ -49,7 +48,6 @@ class MenuFragment : Fragment(), MenuClickInterface {
         binding.listMenuItems.layoutManager = LinearLayoutManager(bottomNav)
         binding.listMenuItems.adapter = adapter
 
-
         binding.fabAdd.setOnClickListener {
             var dialogBinding = AddItemDialogBinding.inflate(layoutInflater)
             var dialog = Dialog(requireContext())
@@ -72,7 +70,6 @@ class MenuFragment : Fragment(), MenuClickInterface {
                     )
                     adapter.notifyDataSetChanged()
                     dialog.dismiss()
-
                 }
             }
             dialog.show()

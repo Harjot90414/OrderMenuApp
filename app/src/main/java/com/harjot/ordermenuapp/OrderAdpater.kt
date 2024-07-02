@@ -19,7 +19,6 @@ class OrderAdpater(var array: ArrayList<MenuModel>, var orderClickInterface: Ord
         var ibtnOrderSub: ImageButton = view.findViewById(R.id.ibtnOrderSub)
         var tvOrderCount:TextView = view.findViewById(R.id.tvOrderCount)
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         var initview =
             LayoutInflater.from(parent.context).inflate(R.layout.layout_show_add_items, parent, false)

@@ -15,16 +15,11 @@ class MenuAdapter(var menulist: ArrayList<MenuModel>, var menuClickInterface: Me
         var etItemName: TextView = view.findViewById(R.id.tvmenuitem)
         var etItemQuantity: TextView = view.findViewById(R.id.tvMenuQuantity)
     }
-
-
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             var initview =
                 LayoutInflater.from(parent.context).inflate(R.layout.layout_menuitem, parent, false)
             return ViewHolder(initview)
         }
-
-
-
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             holder.etItemName.setText(menulist[position].name.toString())
             holder.etItemQuantity.setText(menulist[position].quantity.toString())
@@ -35,7 +30,6 @@ class MenuAdapter(var menulist: ArrayList<MenuModel>, var menuClickInterface: Me
         override fun getItemCount(): Int {
             return menulist.size
         }
-
 }
 
 
